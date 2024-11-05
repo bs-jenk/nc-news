@@ -4,7 +4,7 @@ const TopBar = () => {
 
   return <nav className="top-bar">
     <Header />
-    <button className="home-btn">Home</button>
+    <a className="home-link">Home (all articles)</a>
     <button className="login-btn">Log In</button>
   </nav>
 }
