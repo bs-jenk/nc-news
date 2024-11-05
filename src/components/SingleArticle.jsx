@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticleById } from "../utils/api";
+import LoadingMsg from "./LoadingMsg";
 
 const SingleArticle = () => {
   const [selectedArticle, setSelectedArticle] = useState({});
@@ -16,7 +17,7 @@ const SingleArticle = () => {
   }, [])
 
   if (isLoading) {
-    return <p className="loading-msg">Loading...</p>
+    return <LoadingMsg />
   }
 
   return <section className="selected-article">
