@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import ArticleBox from "./ArticleBox";
+import { fetchArticles } from "../utils/api";
+import LoadingMsg from "./LoadingMsg";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("https://be-nc-news-c6su.onrender.com/api/articles")
-      .then((response) => {
-        setArticles(response.data.articles);
+    fetchArticles()
+      .then((articlesData) => {
+        setArticles(articlesData);
         setIsLoading(false);
       })
   }, []);
 
   if (isLoading) {
-    return <p className="loading-msg">Loading...</p>
+    return <LoadingMsg />
   }
 
   return <section className="articles-list">

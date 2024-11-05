@@ -89,7 +89,7 @@ h1 span {
   font-size: 5rem;
 }
 
-.home-btn {
+.home-link {
   align-self: flex-end;
   margin: 20px;
 }
@@ -97,7 +97,7 @@ h1 span {
 .login-btn {
   align-self: flex-end;
   text-align: right;
-  margin: 20px 0px 20px 1000px;
+  margin: 20px 0px 20px 900px;
 }
 
 .side-bar {

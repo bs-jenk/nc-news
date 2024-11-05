@@ -1,14 +1,18 @@
 import Articles from "./components/Articles";
-import SideBar from "./components/SideBar";
+import SingleArticle from "./components/SingleArticle";
+// import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 
   return (
     <>
       <TopBar />
-      <SideBar />
-      <Articles />
+      <Routes>
+        <Route path='/' element={<Articles />} />
+        <Route path='/articles/:article_id' element={<SingleArticle />} />
+      </Routes>
     </>
   )
 }
