@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { fetchArticleById } from "../utils/api";
 
 const SingleArticle = () => {
   const [selectedArticle, setSelectedArticle] = useState({});
   const { article_id } = useParams();
 
   useEffect(() => {
-    axios.get(`https://be-nc-news-c6su.onrender.com/api/articles/${article_id}`)
-      .then((response) => {
-        setSelectedArticle(response.data.article)
+    fetchArticleById(article_id)
+      .then((articleData) => {
+        setSelectedArticle(articleData)
       })
   }, [])
 
