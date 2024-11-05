@@ -1,7 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -15,17 +13,17 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #fa3232;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #fa3232;
 }
 
 body {
-  margin: 0;
+  margin: 20;
   display: flex;
-  place-items: center;
+  place-items: top;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -63,6 +61,62 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: rgb(109, 109, 109);
   }
+}
+
+.top-bar {
+  border: solid thin black;
+  display: flex;
+  flex: 1;
+  width: 100vw;
+  height: 170px;
+  min-width: auto;
+}
+
+.main-header {
+  align-self: center;
+}
+
+h1 {
+  color: red;
+}
+
+h1 span {
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 2px;
+  color: white;
+  font-size: 5rem;
+}
+
+.home-btn {
+  align-self: flex-end;
+  margin: 20px;
+}
+
+.login-btn {
+  align-self: flex-end;
+  text-align: right;
+  margin: 20px 0px 20px 1000px;
+}
+
+.side-bar {
+  display: grid;
+  border: solid thin black;
+  height: 25vw;
+  width: 100px;
+  align-items: center;
+  padding: 50px;
+}
+
+.article-box {
+  width: auto;
+  border: 15px solid red;
+  padding: 50px;
+  margin: 20px 10px 20px 300px;
+}
+
+.loading-msg {
+  text-align: center;
+  font-size: xx-large;
 }
