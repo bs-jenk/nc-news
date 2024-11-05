@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import { fetchArticleById } from "../utils/api";
 
 const SingleArticle = () => {
   const [selectedArticle, setSelectedArticle] = useState({});
   const { article_id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchArticleById(article_id)
       .then((articleData) => {
         setSelectedArticle(articleData)
+        setIsLoading(false);
       })
   }, [])
+
+  if (isLoading) {
+    return <p className="loading-msg">Loading...</p>
+  }
 
   return <section className="selected-article">
     <h2>{selectedArticle.title}</h2>
