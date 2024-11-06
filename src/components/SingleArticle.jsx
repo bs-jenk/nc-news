@@ -25,8 +25,7 @@ const SingleArticle = () => {
     <>
       <section className="selected-article">
         <h2>{selectedArticle.title}</h2>
-        <p>Posted by: {selectedArticle.author}</p>
-        <p>Date: {selectedArticle.created_at}</p>
+        <p>Posted by <strong>{selectedArticle.author}</strong> on {selectedArticle.created_at}</p>
         <p>topic: #{selectedArticle.topic}</p>
         <img src={selectedArticle.article_img_url} alt="" />
         <p>{selectedArticle.body}</p>
