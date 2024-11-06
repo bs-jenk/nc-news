@@ -5,7 +5,7 @@ const TopBar = () => {
 
   return <nav className='top-bar'>
     <Header />
-    <Link className='home-link' to="/">Home (all articles)</Link>
+    <Link className='articles-link' to="/articles">Articles</Link>
     <button className='login-btn'>Log In</button>
   </nav>
 }
