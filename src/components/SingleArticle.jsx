@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchArticleById } from "../utils/api";
 import LoadingMsg from "./LoadingMsg";
 import CommentManager from "./CommentManager";
+import VoteHandler from "./VoteHandler";
 
 const SingleArticle = () => {
   const [selectedArticle, setSelectedArticle] = useState({});
@@ -29,11 +30,9 @@ const SingleArticle = () => {
         <p>topic: #{selectedArticle.topic}</p>
         <img src={selectedArticle.article_img_url} alt="" />
         <p>{selectedArticle.body}</p>
-        <p>votes: {selectedArticle.votes}</p>
       </section>
-      <section className="comments">
-        <CommentManager article_id={article_id} comment_count={selectedArticle.comment_count} />
-      </section>
+      <VoteHandler article_id={article_id} votes={selectedArticle.votes} />
+      <CommentManager article_id={article_id} comment_count={selectedArticle.comment_count} />
     </>
   )
 }
