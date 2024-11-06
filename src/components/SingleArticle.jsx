@@ -31,10 +31,9 @@ const SingleArticle = () => {
         <img src={selectedArticle.article_img_url} alt="" />
         <p>{selectedArticle.body}</p>
         <p>votes: {selectedArticle.votes}</p>
-        <p>comments: {selectedArticle.comment_count}</p>
       </section>
       <section className="comments">
-        <CommentManager article_id={article_id} />
+        <CommentManager article_id={article_id} comment_count={selectedArticle.comment_count} />
       </section>
     </>
   )

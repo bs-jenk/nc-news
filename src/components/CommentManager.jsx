@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchCommentsByArticleId } from "../utils/api";
+import CommentLister from "./CommentLister";
 
-const CommentManager = ({ article_id }) => {
+const CommentManager = ({ article_id, comment_count }) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -11,8 +12,9 @@ const CommentManager = ({ article_id }) => {
   }, [])
 
   return (
-    <section>
-      <p>Comments: </p>
+    <section className="comments-section">
+      <h4>Comments ({comment_count}):</h4>
+      <CommentLister comments={comments} />
     </section>
   )
 }
