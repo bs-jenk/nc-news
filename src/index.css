@@ -94,6 +94,12 @@ h1 span {
   margin: 20px;
 }
 
+.articles-link {
+  align-self: flex-end;
+  margin: 20px;
+  text-decoration: underline;
+}
+
 .login-btn {
   align-self: flex-end;
   text-align: right;
@@ -110,13 +116,30 @@ h1 span {
 }
 
 .article-box {
-  width: auto;
-  border: 15px solid red;
+  width: 50%;
+  margin: auto;
+  border: 10px solid rgb(93, 93, 93);
   padding: 50px;
-  margin: 20px 10px 20px 300px;
 }
 
 .loading-msg {
   text-align: center;
   font-size: xx-large;
+}
+
+.selected-article {
+  width: 50%;
+  margin: auto;
+}
+
+.comments-section {
+  width: 50%;
+  margin: auto;
+}
+
+.comment {
+  padding: 10px;
+  border: solid black 1px;
+  margin: 20px;
+  margin-bottom: 40px;
 }
