@@ -140,4 +140,6 @@ h1 span {
 .comment {
   padding: 10px;
   border: solid black 1px;
+  margin: 20px;
+  margin-bottom: 40px;
 }
