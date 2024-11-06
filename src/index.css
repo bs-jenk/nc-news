@@ -131,3 +131,13 @@ h1 span {
   width: 50%;
   margin: auto;
 }
+
+.comments-section {
+  width: 50%;
+  margin: auto;
+}
+
+.comment {
+  padding: 10px;
+  border: solid black 1px;
+}
