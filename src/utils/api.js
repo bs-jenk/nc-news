@@ -22,4 +22,18 @@ const fetchCommentsByArticleId = (articleId) => {
   });
 };
 
-export { fetchArticles, fetchArticleById, fetchCommentsByArticleId };
+const updateVotesByArticleId = (articleId, number) => {
+  const body = {
+    inc_votes: number,
+  };
+  return api.patch(`/articles/${articleId}`, body).then((response) => {
+    return response.data.updatedArticle;
+  });
+};
+
+export {
+  fetchArticles,
+  fetchArticleById,
+  fetchCommentsByArticleId,
+  updateVotesByArticleId,
+};

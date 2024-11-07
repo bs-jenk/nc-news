@@ -143,3 +143,16 @@ h1 span {
   margin: 20px;
   margin-bottom: 40px;
 }
+
+.votes-section {
+  width: 50%;
+  margin: auto;
+}
+
+.vote-btns {
+  margin-right: 10px;
+}
+
+#vote-err-msg {
+  color: red;
+}
