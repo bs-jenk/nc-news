@@ -29,7 +29,7 @@ const VoteHandler = ({ article_id, votes }) => {
       <h4>Votes: {articleVotes}</h4>
       <button className="vote-btns" onClick={incrementVotes} disabled={isDisabled}>Vote +1</button>
       <button className="vote-btns" onClick={decrementVotes} disabled={isDisabled}>Vote -1</button>
-      <p id="vote-err-msg">{errMsg}</p>
+      <p id="vote-err-msg" className="err-msg">{errMsg}</p>
     </section>
   )
 }

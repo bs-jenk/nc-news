@@ -153,6 +153,6 @@ h1 span {
   margin-right: 10px;
 }
 
-#vote-err-msg {
+.err-msg {
   color: red;
 }
