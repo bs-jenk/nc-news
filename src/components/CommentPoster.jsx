@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { postCommentByArticleId } from "../utils/api";
 import UserContext from "../contexts/userContext";
 
-const CommentPoster = ({ article_id, comments, setComments }) => {
+const CommentPoster = ({ article_id, comments, setComments, setNewCommentCount }) => {
   const { signedInUser } = useContext(UserContext);
   const [newComment, setNewComment] = useState("");
   const [isPosting, setIsPosting] = useState(false);
@@ -18,12 +18,13 @@ const CommentPoster = ({ article_id, comments, setComments }) => {
     postCommentByArticleId(article_id, newComment, signedInUser)
       .then((response) => {
         setIsPosting(false);
-        setComments([response, ...comments])
+        setComments([response, ...comments]);
+        setNewCommentCount((currentCount) => currentCount + 1);
       })
       .catch(() => {
         setErrMsg("Error - please try again later")
         setIsPosting(false);
-      })
+      });
   }
 
   if (isPosting) {
