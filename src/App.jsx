@@ -18,6 +18,7 @@ function App() {
         <Route path='/articles' element={<Articles />} />
         <Route path='/articles/:article_id' element={<SingleArticle />} />
         <Route path='/topics' element={<TopicLister />} />
+        <Route path='/topics/:topic_slug' element={<Articles />} />
       </Routes>
     </UserContext.Provider>
   )

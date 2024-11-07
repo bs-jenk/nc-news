@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const TopicItem = ({ topic }) => {
-  console.log(topic, "<< topic")
+
   return (
     <li className="topic-item">
-      <a className="topic-links" href="">{topic.slug}</a>
+      <Link className="topic-links" to={`/topics/${topic.slug}`} >{topic.slug}</Link>
       <p>{topic.description}</p>
     </li>
   )
