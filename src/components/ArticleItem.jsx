@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ArticleBox = ({ article }) => {
+const ArticleItem = ({ article }) => {
   return <li className='article-box'>
     <h3><Link to={`/articles/${article.article_id}`} >{article.title}</Link></h3>
     <img className='article-img' src={article.article_img_url} alt="" />
@@ -10,4 +10,4 @@ const ArticleBox = ({ article }) => {
   </li>
 }
 
-export default ArticleBox;
+export default ArticleItem;

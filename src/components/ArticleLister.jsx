@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import ArticleBox from "./ArticleBox";
+import ArticleItem from "./ArticleItem";
 import { fetchArticles } from "../utils/api";
 import LoadingMsg from "./LoadingMsg";
 import { useParams } from "react-router-dom";
 
-const Articles = () => {
+const ArticleLister = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { topic_slug } = useParams();
@@ -23,9 +23,9 @@ const Articles = () => {
 
   return <ul className="article-list">
     {articles.map((article) => {
-      return <ArticleBox article={article} key={article.article_id} />
+      return <ArticleItem article={article} key={article.article_id} />
     })}
   </ul>
 }
 
-export default Articles;
+export default ArticleLister;
