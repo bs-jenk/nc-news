@@ -41,10 +41,17 @@ const postCommentByArticleId = (articleId, comment, user) => {
   });
 };
 
+const deleteCommentById = (commentId) => {
+  return api.delete(`/comments/${commentId}`).then((response) => {
+    return response.status;
+  });
+};
+
 export {
   fetchArticles,
   fetchArticleById,
   fetchCommentsByArticleId,
   updateVotesByArticleId,
   postCommentByArticleId,
+  deleteCommentById,
 };
