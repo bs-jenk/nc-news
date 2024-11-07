@@ -32,8 +32,8 @@ const CommentPoster = ({ article_id, comments, setComments }) => {
 
   return (
     <form id="new-comment-form" onSubmit={handleSubmit}>
-      <label htmlFor="post-comment">Post a new comment as (_username):</label><br></br>
-      <input type="text" id="post-comment" onChange={handleChange} required /><br></br>
+      <label htmlFor="post-comment" id="post-comment-label">Post a new comment as <strong>{signedInUser}</strong>:</label><br></br><br></br>
+      <input type="text" id="post-comment" onChange={handleChange} required /><br></br><br></br>
       <button type="submit">Post comment</button>
       <p id="comment-err-msg" className="err-msg">{errMsg}</p>
     </form>
