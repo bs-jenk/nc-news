@@ -177,3 +177,11 @@ h1 span {
 .article-img {
   border-radius: 2%;
 }
+
+.comment-list {
+  list-style-type: none;
+}
+
+.article-list {
+  list-style-type: none;
+}

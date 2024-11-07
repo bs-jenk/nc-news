@@ -19,11 +19,11 @@ const Articles = () => {
     return <LoadingMsg />
   }
 
-  return <section className="articles-list">
+  return <ul className="article-list">
     {articles.map((article) => {
       return <ArticleBox article={article} key={article.article_id} />
     })}
-  </section>
+  </ul>
 }
 
 export default Articles;
