@@ -28,7 +28,7 @@ const SingleArticle = () => {
         <h2>{selectedArticle.title}</h2>
         <p>Posted by <strong>{selectedArticle.author}</strong> on {selectedArticle.created_at}</p>
         <p>topic: #{selectedArticle.topic}</p>
-        <img src={selectedArticle.article_img_url} alt="" />
+        <img className="article-img" src={selectedArticle.article_img_url} alt="" />
         <p>{selectedArticle.body}</p>
       </section>
       <VoteHandler article_id={article_id} articleVotes={selectedArticle.votes} />
