@@ -31,9 +31,20 @@ const updateVotesByArticleId = (articleId, number) => {
   });
 };
 
+const postCommentByArticleId = (articleId, comment, user) => {
+  const body = {
+    username: 'tickle122',
+    body: comment,
+  };
+  return api.post(`/articles/${articleId}/comments`, body).then((response) => {
+    return response.data.newComment;
+  });
+};
+
 export {
   fetchArticles,
   fetchArticleById,
   fetchCommentsByArticleId,
   updateVotesByArticleId,
+  postCommentByArticleId,
 };
