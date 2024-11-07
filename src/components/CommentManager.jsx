@@ -15,7 +15,7 @@ const CommentManager = ({ article_id, comment_count }) => {
   return (
     <section className="comments-section">
       <h4>Comments ({comment_count}):</h4>
-      <CommentPoster article_id={article_id} />
+      <CommentPoster article_id={article_id} comments={comments} setComments={setComments} />
       <CommentLister comments={comments} />
     </section>
   )
