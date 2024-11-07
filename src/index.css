@@ -156,3 +156,9 @@ h1 span {
 .err-msg {
   color: red;
 }
+
+#signed-in-msg {
+  align-self: flex-end;
+  text-align: right;
+  margin: 20px 0px 20px 700px;
+}

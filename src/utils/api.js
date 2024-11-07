@@ -33,7 +33,7 @@ const updateVotesByArticleId = (articleId, number) => {
 
 const postCommentByArticleId = (articleId, comment, user) => {
   const body = {
-    username: 'tickle122',
+    username: user,
     body: comment,
   };
   return api.post(`/articles/${articleId}/comments`, body).then((response) => {

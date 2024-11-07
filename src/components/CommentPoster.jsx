@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { postCommentByArticleId } from "../utils/api";
+import UserContext from "../contexts/userContext";
 
 const CommentPoster = ({ article_id, comments, setComments }) => {
+  const { signedInUser } = useContext(UserContext);
   const [newComment, setNewComment] = useState("");
   const [isPosting, setIsPosting] = useState(false);
   const [errMsg, setErrMsg] = useState("");
@@ -13,9 +15,8 @@ const CommentPoster = ({ article_id, comments, setComments }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsPosting(true);
-    postCommentByArticleId(article_id, newComment)
+    postCommentByArticleId(article_id, newComment, signedInUser)
       .then((response) => {
-        console.log(response, "<< new comment")
         setIsPosting(false);
         setComments([response, ...comments])
       })
