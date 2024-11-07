@@ -3,11 +3,11 @@ import CommentItem from "./CommentItem";
 const CommentLister = ({ comments }) => {
 
   return (
-    <section>
+    <ul>
       {comments.map((comment) => {
         return <CommentItem comment={comment} key={comment.comment_id} />
       })}
-    </section>
+    </ul>
   )
 }
 
