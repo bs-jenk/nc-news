@@ -4,10 +4,16 @@ const api = axios.create({
   baseURL: 'https://be-nc-news-c6su.onrender.com/api',
 });
 
-const fetchArticles = () => {
-  return api.get('/articles').then((response) => {
-    return response.data.articles;
-  });
+const fetchArticles = (topic_slug) => {
+  return api
+    .get('/articles', {
+      params: {
+        topic: topic_slug,
+      },
+    })
+    .then((response) => {
+      return response.data.articles;
+    });
 };
 
 const fetchArticleById = (articleId) => {
@@ -47,6 +53,12 @@ const deleteCommentById = (commentId) => {
   });
 };
 
+const fetchTopics = () => {
+  return api.get(`topics`).then((response) => {
+    return response.data.topics;
+  });
+};
+
 export {
   fetchArticles,
   fetchArticleById,
@@ -54,4 +66,5 @@ export {
   updateVotesByArticleId,
   postCommentByArticleId,
   deleteCommentById,
+  fetchTopics,
 };

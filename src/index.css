@@ -97,6 +97,16 @@ h1 span {
 .articles-link {
   align-self: flex-end;
   margin: 20px;
+}
+.articles-link:hover {
+  text-decoration: underline;
+}
+
+.topics-link {
+  align-self: flex-end;
+  margin: 20px;
+}
+.topics-link:hover {
   text-decoration: underline;
 }
 
@@ -118,7 +128,7 @@ h1 span {
 .article-box {
   width: 50%;
   margin: auto;
-  border: 10px solid rgb(93, 93, 93);
+  border: 2px solid rgb(93, 93, 93);
   padding: 50px;
 }
 
@@ -184,4 +194,23 @@ h1 span {
 
 .article-list {
   list-style-type: none;
+}
+
+.topics {
+  width: 50%;
+  margin: auto;
+}
+
+.topic-list {
+  list-style-type: none;
+}
+
+.topic-links {
+  font-size: x-large;
+}
+
+.topic-item {
+  padding: 20px;
+  border: solid rgb(93, 93, 93) 2px;
+  margin: 20px;
 }
