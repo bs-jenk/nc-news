@@ -5,6 +5,7 @@ import SingleArticle from "./components/SingleArticle";
 import TopBar from "./components/TopBar";
 import { Routes, Route } from "react-router-dom";
 import UserContext from "./contexts/userContext";
+import TopicLister from "./components/TopicLister";
 
 function App() {
   const [signedInUser, setSignedInUser] = useState('tickle122');
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Articles />} />
         <Route path='/articles' element={<Articles />} />
         <Route path='/articles/:article_id' element={<SingleArticle />} />
+        <Route path='/topics' element={<TopicLister />} />
       </Routes>
     </UserContext.Provider>
   )

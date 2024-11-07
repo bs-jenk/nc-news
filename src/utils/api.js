@@ -47,6 +47,12 @@ const deleteCommentById = (commentId) => {
   });
 };
 
+const fetchTopics = () => {
+  return api.get(`topics`).then((response) => {
+    return response.data.topics;
+  });
+};
+
 export {
   fetchArticles,
   fetchArticleById,
@@ -54,4 +60,5 @@ export {
   updateVotesByArticleId,
   postCommentByArticleId,
   deleteCommentById,
+  fetchTopics,
 };
