@@ -162,3 +162,26 @@ h1 span {
   text-align: right;
   margin: 20px 0px 20px 700px;
 }
+
+#post-comment-label {
+  font-size: large;
+  margin-bottom: 30px;
+}
+
+#post-comment {
+  width: 100%;
+  font-size: large;
+  height: fit-content;
+}
+
+.article-img {
+  border-radius: 2%;
+}
+
+.comment-list {
+  list-style-type: none;
+}
+
+.article-list {
+  list-style-type: none;
+}
