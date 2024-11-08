@@ -4,6 +4,7 @@ import { fetchArticleById } from "../utils/api";
 import LoadingMsg from "./LoadingMsg";
 import CommentManager from "./CommentManager";
 import VoteHandler from "./VoteHandler";
+import { formatDate } from "../contexts/formatDateTime";
 
 const SingleArticle = () => {
   const [selectedArticle, setSelectedArticle] = useState({});
@@ -26,7 +27,7 @@ const SingleArticle = () => {
     <>
       <section className="selected-article">
         <h2>{selectedArticle.title}</h2>
-        <p>Posted by <strong>{selectedArticle.author}</strong> on {selectedArticle.created_at}</p>
+        <p>Posted by <strong>{selectedArticle.author}</strong> on {formatDate(selectedArticle.created_at)}</p>
         <p>topic: #{selectedArticle.topic}</p>
         <img className="article-img" src={selectedArticle.article_img_url} alt="" />
         <p>{selectedArticle.body}</p>
