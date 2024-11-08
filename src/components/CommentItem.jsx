@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import UserContext from "../contexts/userContext";
 import { deleteCommentById } from "../utils/api";
 
-const CommentItem = ({ comment }) => {
+const CommentItem = ({ comment, setNewCommentCount }) => {
   const { signedInUser } = useContext(UserContext);
   const [isDeleted, setIsDeleted] = useState(false);
   const [errMsg, setErrMsg] = useState("");
@@ -11,10 +11,11 @@ const CommentItem = ({ comment }) => {
     deleteCommentById(comment.comment_id)
       .then(() => {
         setIsDeleted(true);
+        setNewCommentCount((currentCount) => currentCount - 1);
       })
       .catch(() => {
         setErrMsg("Error - please try again later");
-      })
+      });
   }
 
   if (isDeleted) return <p>(Comment deleted by user)</p>

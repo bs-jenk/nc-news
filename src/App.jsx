@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Articles from "./components/Articles";
+import ArticleLister from "./components/ArticleLister";
 import SingleArticle from "./components/SingleArticle";
 // import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
@@ -14,11 +14,11 @@ function App() {
     <UserContext.Provider value={{ signedInUser, setSignedInUser }}>
       <TopBar />
       <Routes>
-        <Route path='/' element={<Articles />} />
-        <Route path='/articles' element={<Articles />} />
+        <Route path='/' element={<ArticleLister />} />
+        <Route path='/articles' element={<ArticleLister />} />
         <Route path='/articles/:article_id' element={<SingleArticle />} />
         <Route path='/topics' element={<TopicLister />} />
-        <Route path='/topics/:topic_slug' element={<Articles />} />
+        <Route path='/topics/:topic_slug' element={<ArticleLister />} />
       </Routes>
     </UserContext.Provider>
   )
