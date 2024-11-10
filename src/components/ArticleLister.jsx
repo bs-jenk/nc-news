@@ -3,6 +3,7 @@ import ArticleItem from "./ArticleItem";
 import { fetchArticles } from "../utils/api";
 import LoadingMsg from "./LoadingMsg";
 import { useParams } from "react-router-dom";
+import ErrorHandler from "./ErrorHandler";
 
 const ArticleLister = () => {
   const [articles, setArticles] = useState([]);
@@ -10,6 +11,7 @@ const ArticleLister = () => {
   const { topic_slug } = useParams();
   const [sortBy, setSortBy] = useState(null);
   const [order, setOrder] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchArticles(topic_slug, sortBy, order)
@@ -17,10 +19,18 @@ const ArticleLister = () => {
         setArticles(articlesData);
         setIsLoading(false);
       })
+      .catch((err) => {
+        setIsLoading(false);
+        setError(err);
+      })
   }, [topic_slug, sortBy, order]);
 
   if (isLoading) {
     return <LoadingMsg />
+  }
+
+  if (error) {
+    return <ErrorHandler status={error.response.status} message={error.response.data.msg} />
   }
 
   const handleSelectedSortBy = (event) => {

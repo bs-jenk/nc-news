@@ -5,11 +5,13 @@ import LoadingMsg from "./LoadingMsg";
 import CommentManager from "./CommentManager";
 import VoteHandler from "./VoteHandler";
 import { formatDate } from "../contexts/formatDateTime";
+import ErrorHandler from "./ErrorHandler";
 
 const SingleArticle = () => {
   const [selectedArticle, setSelectedArticle] = useState({});
   const { article_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchArticleById(article_id)
@@ -17,10 +19,18 @@ const SingleArticle = () => {
         setSelectedArticle(articleData)
         setIsLoading(false);
       })
+      .catch((err) => {
+        setIsLoading(false);
+        setError(err);
+      })
   }, [])
 
   if (isLoading) {
     return <LoadingMsg />
+  }
+
+  if (error) {
+    return <ErrorHandler status={error.status} message={error.message} />
   }
 
   return (
