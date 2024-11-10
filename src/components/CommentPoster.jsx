@@ -33,8 +33,8 @@ const CommentPoster = ({ article_id, comments, setComments, setNewCommentCount }
 
   return (
     <form id="new-comment-form" onSubmit={handleSubmit}>
-      <label htmlFor="post-comment" id="post-comment-label">Post a new comment as <strong>{signedInUser}</strong>:</label><br></br><br></br>
-      <input type="text" id="post-comment" onChange={handleChange} required placeholder="Type comment here..." /><br></br><br></br>
+      <label htmlFor="comment-box" id="comment-box-label">Post a new comment as <strong>{signedInUser}</strong>:</label><br></br><br></br>
+      <textarea id="comment-box" onChange={handleChange} required placeholder="Type your comment here..."></textarea><br></br><br></br>
       <button type="submit">Post comment</button>
       <p id="comment-err-msg" className="err-msg">{errMsg}</p>
     </form>

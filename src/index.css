@@ -152,6 +152,7 @@ h1 span {
   border: solid black 1px;
   margin: 20px;
   margin-bottom: 40px;
+  word-wrap: break-word;
 }
 
 .votes-section {
@@ -173,15 +174,15 @@ h1 span {
   margin: 20px 0px 20px 700px;
 }
 
-#post-comment-label {
+#comment-box-label {
   font-size: large;
   margin-bottom: 30px;
 }
 
-#post-comment {
+#comment-box {
   width: 100%;
   font-size: large;
-  height: fit-content;
+  height: 100px;
 }
 
 .article-img {
