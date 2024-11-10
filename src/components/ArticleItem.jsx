@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { formatDate } from "../contexts/formatDateTime";
+import { formatDate } from "../utils/formatDateTime";
 
 const ArticleItem = ({ article }) => {
 

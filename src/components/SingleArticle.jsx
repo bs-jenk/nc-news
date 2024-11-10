@@ -4,7 +4,7 @@ import { fetchArticleById } from "../utils/api";
 import LoadingMsg from "./LoadingMsg";
 import CommentManager from "./CommentManager";
 import VoteHandler from "./VoteHandler";
-import { formatDate } from "../contexts/formatDateTime";
+import { formatDate } from "../utils/formatDateTime";
 import ErrorHandler from "./ErrorHandler";
 
 const SingleArticle = () => {

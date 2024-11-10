@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import UserContext from "../contexts/userContext";
 import { deleteCommentById } from "../utils/api";
-import { formatDate, formatTime } from "../contexts/formatDateTime";
+import { formatDate, formatTime } from "../utils/formatDateTime";
 
 const CommentItem = ({ comment, setNewCommentCount }) => {
   const { signedInUser } = useContext(UserContext);
