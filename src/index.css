@@ -1,3 +1,23 @@
+.App {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content auto auto;
+  grid-template-areas:
+    'header'
+    'nav'
+    'content';
+}
+
+@media only screen and (min-width: 600px) {
+  .App {
+    grid-template-columns: 25% 75%;
+    grid-template-rows: min-content auto;
+    grid-template-areas:
+      'header header'
+      'nav content';
+  }
+}
+
 :root {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
@@ -20,13 +40,13 @@ a:hover {
   color: #fa3232;
 }
 
-body {
+/* body {
   margin: 20;
   display: flex;
   place-items: top;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
 h1 {
   font-size: 3.2em;
@@ -66,16 +86,22 @@ button:focus-visible {
 }
 
 .top-bar {
-  border: solid thin black;
-  display: flex;
-  flex: 1;
-  width: 100vw;
-  height: 170px;
-  min-width: auto;
+  /* display: flex; */
+  /* flex: 1; */
+  /* width: 95vw; */
+  /* height: 170px; */
+  /* min-width: auto; */
+  /* margin: 20px; */
+  padding: 20px;
+  grid-area: nav;
+  background-color: #3b3b3b;
 }
 
 .main-header {
-  align-self: center;
+  padding: 30px;
+  /* align-self: center; */
+  grid-area: header;
+  background-color: #3b3b3b;
 }
 
 h1 {
@@ -92,6 +118,9 @@ h1 span {
 .home-link {
   align-self: flex-end;
   margin: 20px;
+}
+.home-link:hover {
+  text-decoration: underline;
 }
 
 .articles-link {
@@ -113,23 +142,30 @@ h1 span {
 .login-btn {
   align-self: flex-end;
   text-align: right;
-  margin: 20px 0px 20px 900px;
 }
 
-.side-bar {
+#signed-in-msg {
+  /* align-self: flex-end; */
+  /* text-align: right; */
+  /* margin-left: 100px; */
+  margin: 20px;
+}
+
+/* .side-bar {
   display: grid;
   border: solid thin black;
   height: 25vw;
   width: 100px;
   align-items: center;
   padding: 50px;
-}
+} */
 
 .article-box {
   width: 50%;
   margin: auto;
-  border: 2px solid rgb(93, 93, 93);
+  background-color: #3b3b3b;
   padding: 50px;
+  grid-area: content;
 }
 
 .loading-msg {
@@ -168,12 +204,6 @@ h1 span {
   color: red;
 }
 
-#signed-in-msg {
-  align-self: flex-end;
-  text-align: right;
-  margin: 20px 0px 20px 700px;
-}
-
 #comment-box-label {
   font-size: large;
   margin-bottom: 30px;
@@ -187,6 +217,8 @@ h1 span {
 
 .article-img {
   border-radius: 2%;
+  max-width: 100%;
+  height: auto;
 }
 
 .comment-list {
@@ -225,4 +257,8 @@ h1 span {
   text-align: center;
   margin: auto;
   padding: 20px;
+}
+
+.sort-options {
+  margin: 40px;
 }

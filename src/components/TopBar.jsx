@@ -8,7 +8,7 @@ const TopBar = () => {
 
 
   return <nav className='top-bar'>
-    <Header />
+    {/* <Header /> */}
     <Link className='home-link' to='/'>Home</Link>
     <Link className='topics-link' to='/topics'>Topics</Link>
     <Link className='articles-link' to='/articles'>Articles</Link>

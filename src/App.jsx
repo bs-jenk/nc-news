@@ -8,12 +8,14 @@ import UserContext from "./contexts/userContext";
 import TopicLister from "./components/TopicLister";
 import ErrorHandler from "./components/ErrorHandler";
 import HomePage from "./components/HomePage";
+import Header from "./components/Header";
 
 function App() {
   const [signedInUser, setSignedInUser] = useState('tickle122');
 
   return (
     <UserContext.Provider value={{ signedInUser, setSignedInUser }}>
+      <Header />
       <TopBar />
       <Routes>
         <Route path='/' element={<HomePage />} />

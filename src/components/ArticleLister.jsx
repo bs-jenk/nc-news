@@ -43,14 +43,14 @@ const ArticleLister = () => {
 
   return (
     <>
-      <label>Sort by:
+      <label className="sort-options">Sort by:
         <select onChange={handleSelectedSortBy}>
           <option value="created_at">date</option>
           <option value="comment_count">number of comments</option>
           <option value="votes">votes</option>
         </select>
       </label>
-      <label>order:
+      <label className="sort-options">order:
         <select onChange={handleSelectedOrder}>
           <option value="desc">descending</option>
           <option value="asc">ascending</option>
