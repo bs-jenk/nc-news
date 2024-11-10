@@ -20,7 +20,7 @@ const TopicLister = () => {
 
   return (
     <section className="topics">
-      <h2>Select from the following topics: </h2>
+      <h2>List articles from the following topics: </h2>
       <ul className="topic-list">
         {topics.map((topic) => {
           return <TopicItem topic={topic} key={topic.slug} />
