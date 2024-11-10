@@ -6,6 +6,7 @@ import TopBar from "./components/TopBar";
 import { Routes, Route } from "react-router-dom";
 import UserContext from "./contexts/userContext";
 import TopicLister from "./components/TopicLister";
+import ErrorHandler from "./components/ErrorHandler";
 
 function App() {
   const [signedInUser, setSignedInUser] = useState('tickle122');
@@ -19,6 +20,7 @@ function App() {
         <Route path='/articles/:article_id' element={<SingleArticle />} />
         <Route path='/topics' element={<TopicLister />} />
         <Route path='/topics/:topic_slug' element={<ArticleLister />} />
+        <Route path='*' element={<ErrorHandler />} />
       </Routes>
     </UserContext.Provider>
   )

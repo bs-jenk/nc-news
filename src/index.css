@@ -214,3 +214,8 @@ h1 span {
   border: solid rgb(93, 93, 93) 2px;
   margin: 20px;
 }
+
+.error-handler {
+  width: 20%;
+  margin: auto;
+}

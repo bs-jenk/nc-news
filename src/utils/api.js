@@ -19,9 +19,17 @@ const fetchArticles = (topic_slug, sort_by, order) => {
 };
 
 const fetchArticleById = (articleId) => {
-  return api.get(`/articles/${articleId}`).then((response) => {
-    return response.data.article;
-  });
+  return api
+    .get(`/articles/${articleId}`)
+    .then((response) => {
+      return response.data.article;
+    })
+    .catch((err) => {
+      return Promise.reject({
+        status: err.response.status,
+        message: err.response.data.msg,
+      });
+    });
 };
 
 const fetchCommentsByArticleId = (articleId) => {
