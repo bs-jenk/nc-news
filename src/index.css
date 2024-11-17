@@ -94,18 +94,18 @@ button:focus-visible {
   /* margin: 20px; */
   padding: 20px;
   grid-area: nav;
-  background-color: light-dark(#bcd2d0, #3b3b3b);
+  background-color: light-dark(#c5c3c6, #3b3b3b);
 }
 
 .main-header {
   padding: 30px;
   /* align-self: center; */
   grid-area: header;
-  background-color: light-dark(#fc4f4f, #3b3b3b);
+  background-color: light-dark(#1985a1, #3b3b3b);
 }
 
 h1 {
-  color: light-dark(rgb(87, 87, 87), red);
+  color: light-dark(#4c5c68, red);
 }
 
 h1 span {
@@ -163,7 +163,7 @@ h1 span {
 .article-box {
   width: 50%;
   margin: auto;
-  background-color: light-dark(#e1e9b7, #3b3b3b);
+  background-color: light-dark(#c5c3c6, #3b3b3b);
   padding: 50px;
   grid-area: content;
 }
