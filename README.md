@@ -4,6 +4,8 @@ Welcome to the front-end repo for my web app project "Northcoders News", built w
 
 Find the hosted web app here: https://003-nc-news.netlify.app
 
+(Note: Please allow a minute or so for the API data to load when first using the site - after this initial loading period it will function much more quickly.)
+
 This web app allows you to view various news articles by topic, sort them by different properties, vote on articles, and comment and manage comments on different articles. Further functionality, such as logging on as different users, voting on comments, and posting new articles, will be added in the near future.
 
 ## Minimum requirements:
